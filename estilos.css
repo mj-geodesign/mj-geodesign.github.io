@@ -1,4 +1,6 @@
-:root{--texto:#4A4132;--gris:#6E6452;--fondo:#EDE9E0;--leyenda:#FDFBF6;--linea:#d9d2c2;--acento:#4d6b2f}
+:root{--texto:#1E2B33;--gris:#5B6B75;--fondo:#EEF1F2;--leyenda:#FFFFFF;--linea:#D3DADD;--acento:#1F7A8C;--sombra:30,43,51;--velo:rgba(18,26,31,.85);--boton-hover:#1F7A8C}
+/* tema de serie: Oasis Atacama (paleta propia de las láminas) */
+.tema-oasis{--texto:#4A4132;--gris:#6E6452;--fondo:#EDE9E0;--leyenda:#FDFBF6;--linea:#d9d2c2;--acento:#4d6b2f;--sombra:74,65,50;--velo:var(--velo);--boton-hover:#2f2920}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--fondo);color:var(--texto);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
@@ -16,15 +18,23 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.02e
 h1{font-size:clamp(2.6rem,7vw,5rem);line-height:1.02}
 h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15}
 h3{font-size:1.2rem;line-height:1.25}
-.etiqueta{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gris);margin:0 0 1.1rem}
+.etiqueta{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acento);font-weight:600;margin:0 0 1.1rem}
 p{margin:0 0 1rem}
 .bajada{font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.5;color:var(--gris)}
+/* portada de entrada */
+.portada{min-height:calc(100vh - 74px);display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center;padding:3rem 0}
+.portada h1{font-size:clamp(3rem,8vw,6rem)}
+.portada figure{margin:0;justify-self:end;max-width:460px;width:100%}
+.portada figure img{display:block;width:100%;height:auto;box-shadow:0 22px 48px -24px rgba(var(--sombra),.55)}
+.firma{margin:1.6rem 0 0;font-size:.95rem;color:var(--gris)}
+.boton{display:inline-block;margin-top:1.8rem;padding:.95rem 1.7rem;background:var(--texto);color:var(--leyenda);text-decoration:none;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;transition:.2s}
+.boton:hover{background:var(--boton-hover)}
 /* portada: intro */
 .intro{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:end;padding:4.5rem 0 3rem}
 .intro .bio{font-size:1rem;color:var(--texto);border-left:2px solid var(--linea);padding-left:1.4rem}
 /* imagen principal */
 .hero{margin:0 0 1rem}
-.hero img{display:block;width:100%;height:auto;background:var(--leyenda);box-shadow:0 18px 40px -22px rgba(74,65,50,.45)}
+.hero img{display:block;width:100%;height:auto;background:var(--leyenda);box-shadow:0 18px 40px -22px rgba(var(--sombra),.45)}
 .hero figcaption{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;color:var(--gris);margin-top:.8rem}
 .hero figcaption a{text-decoration:none;border-bottom:1px solid var(--gris)}
 .hero figcaption a:hover{color:var(--texto);border-color:var(--texto)}
@@ -34,7 +44,7 @@ p{margin:0 0 1rem}
 .seccion>header p{margin:0;color:var(--gris);font-size:.95rem}
 /* tarjetas de serie */
 .serie{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:2.5rem;align-items:center;background:var(--leyenda);border:1px solid var(--linea);padding:1.5rem;text-decoration:none;transition:.25s}
-.serie:hover{transform:translateY(-3px);box-shadow:0 18px 36px -24px rgba(74,65,50,.55)}
+.serie:hover{transform:translateY(-3px);box-shadow:0 18px 36px -24px rgba(var(--sombra),.55)}
 .serie img{display:block;width:100%;height:auto}
 .serie h3{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:.6rem}
 .serie p{color:var(--gris);max-width:34rem}
@@ -48,12 +58,15 @@ p{margin:0 0 1rem}
 .grilla{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .grilla.cuatro{grid-template-columns:repeat(4,1fr)}
 .ficha{margin:0;background:var(--leyenda);border:1px solid var(--linea);transition:.25s}
-.ficha:hover{transform:translateY(-3px);box-shadow:0 18px 36px -24px rgba(74,65,50,.55)}
+.ficha:hover{transform:translateY(-3px);box-shadow:0 18px 36px -24px rgba(var(--sombra),.55)}
 .ficha button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
 .ficha img{display:block;width:100%;height:auto}
 .ficha figcaption{padding:.9rem 1.1rem 1.1rem}
 .ficha figcaption strong{font-family:Fraunces,Georgia,serif;font-size:1.15rem;font-weight:600;display:block;line-height:1.2}
 .ficha figcaption span{font-size:.85rem;color:var(--gris)}
+.ubicacion{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:3rem;align-items:center;margin:0 0 1rem}
+.ubicacion .ficha{max-width:420px}
+.ubicacion h2{margin-bottom:1rem}
 /* método */
 .metodo{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 3rem;margin-top:.5rem}
 .metodo p{font-size:.9rem;color:var(--gris);margin:0}
@@ -61,12 +74,15 @@ p{margin:0 0 1rem}
 .metodo .ancho{grid-column:1/-1}
 /* visor */
 dialog{border:0;padding:0;background:transparent;max-width:min(94vw,900px);max-height:94vh;overflow:visible}
-dialog::backdrop{background:rgba(40,34,24,.82)}
+dialog::backdrop{background:var(--velo)}
 dialog img{display:block;max-width:100%;max-height:90vh;margin:auto;background:var(--leyenda)}
 dialog form{position:absolute;top:-2.4rem;right:0;margin:0}
 dialog button{font:inherit;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;background:none;border:0;color:#fff;cursor:pointer}
 footer{margin-top:5rem;border-top:1px solid var(--linea);padding:1.8rem 0 3rem;font-size:.85rem;color:var(--gris)}
 @media (max-width:820px){
+ .portada{grid-template-columns:1fr;gap:2.2rem;min-height:0;padding:2.4rem 0}
+ .portada figure{justify-self:start;max-width:320px}
+ .ubicacion{grid-template-columns:1fr;gap:1.4rem}
  .intro{grid-template-columns:1fr;gap:1.6rem;padding:2.6rem 0 2rem}
  .serie{grid-template-columns:1fr;gap:1.4rem}
  .grilla,.grilla.cuatro{grid-template-columns:repeat(2,1fr);gap:1rem}
