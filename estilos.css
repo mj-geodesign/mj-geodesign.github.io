@@ -25,6 +25,7 @@ p{margin:0 0 1rem}
 /* portada de entrada: título a la izquierda, quién soy a la derecha */
 .inicio{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:3.5rem;align-items:center;min-height:calc(100vh - 74px);padding:2.5rem 0}
 .inicio .portada{min-height:0;padding:0}
+.firma{font-family:var(--f-mono);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);margin:.6rem 0 0}
 .inicio .portada h1{font-size:clamp(2.6rem,5.2vw,4.6rem)}
 .inicio .quien{display:block;margin:0;padding:2rem 2.2rem}
 .inicio .quien h2{font-size:1.5rem;margin:.3rem 0 1rem}
