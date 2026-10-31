@@ -1,40 +1,41 @@
-:root{--texto:#1E2B33;--gris:#5B6B75;--fondo:#EEF1F2;--leyenda:#FFFFFF;--linea:#D3DADD;--acento:#19707F;--sombra:30,43,51;--velo:rgba(18,26,31,.85);--boton-hover:#19707F;--f-titulo:Newsreader,Georgia,serif;--f-texto:Inter,system-ui,sans-serif}
+:root{--texto:#232B36;--gris:#5C6670;--fondo:#FAF6ED;--leyenda:#FFFFFF;--linea:#DAD6C8;--acento:#566B88;--azul:#B8C5D5;--bruma:#D6DAD9;--crema:#E8E6D2;--mantequilla:#E8DFB4;--sombra:35,43,54;--velo:rgba(24,30,38,.85);--boton-hover:#232B36;--f-titulo:Newsreader,Georgia,serif;--f-texto:Newsreader,Georgia,serif;--f-mono:"DM Mono","Courier New",monospace;--peso-titulo:400;--tam-base:18px}
 /* tema de serie: Oasis Atacama (paleta propia de las láminas) */
-.tema-oasis{--texto:#4A4132;--gris:#6E6452;--fondo:#EDE9E0;--leyenda:#FDFBF6;--linea:#d9d2c2;--acento:#4d6b2f;--sombra:74,65,50;--velo:rgba(40,34,24,.82);--boton-hover:#2f2920;--f-titulo:Fraunces,Georgia,serif;--f-texto:"IBM Plex Sans",system-ui,sans-serif}
+.tema-oasis{--texto:#4A4132;--gris:#6E6452;--fondo:#EDE9E0;--leyenda:#FDFBF6;--linea:#d9d2c2;--acento:#4d6b2f;--azul:#d9d2c2;--bruma:#E4DED0;--crema:#EDE9E0;--mantequilla:#E4DED0;--sombra:74,65,50;--velo:rgba(40,34,24,.82);--boton-hover:#2f2920;--f-titulo:Fraunces,Georgia,serif;--f-texto:"IBM Plex Sans",system-ui,sans-serif;--f-mono:"IBM Plex Sans",system-ui,sans-serif;--peso-titulo:600;--tam-base:17px}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--fondo);color:var(--texto);font-family:var(--f-texto);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--fondo);color:var(--texto);font-family:var(--f-texto);line-height:1.6;font-size:var(--tam-base);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 /* cabecera */
-header.sitio{border-bottom:1px solid var(--linea)}
+header.sitio{border-bottom:1px solid var(--texto)}
 header.sitio .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1.2rem;padding-bottom:1.2rem}
-.marca{font-family:var(--f-titulo);font-weight:600;font-size:1.2rem;text-decoration:none;letter-spacing:-.01em}
+.marca{font-family:var(--f-titulo);font-weight:var(--peso-titulo);font-size:1.2rem;text-decoration:none;letter-spacing:-.01em}
 header.sitio nav{display:flex;gap:1.8rem}
-header.sitio nav a{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--gris);padding:.3rem 0;border-bottom:1px solid transparent;transition:.2s}
+header.sitio nav a{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--gris);padding:.3rem 0;border-bottom:1px solid transparent;transition:.2s}
 header.sitio nav a:hover,header.sitio nav a[aria-current]{color:var(--texto);border-bottom-color:var(--texto)}
 /* tipografía */
-h1,h2,h3{font-family:var(--f-titulo);font-weight:600;letter-spacing:-.02em;margin:0}
+h1,h2,h3{font-family:var(--f-titulo);font-weight:var(--peso-titulo);letter-spacing:-.01em;margin:0}
 h1{font-size:clamp(2.6rem,7vw,5rem);line-height:1.02}
 h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15}
 h3{font-size:1.2rem;line-height:1.25}
-.etiqueta{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acento);font-weight:600;margin:0 0 1.1rem}
+h1 em,h2 em,h3 em{font-style:italic}
+.etiqueta{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acento);font-weight:600;margin:0 0 1.1rem}
 p{margin:0 0 1rem}
 .bajada{font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.5;color:var(--gris)}
 /* portada de entrada */
 .portada{min-height:calc(100vh - 74px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:4rem 0}
 .portada .bajada{max-width:42rem}
-.quien{display:grid;grid-template-columns:minmax(0,1fr) 2fr;gap:3rem;padding:3.5rem 0 1rem;border-top:1px solid var(--linea)}
+.quien{display:grid;grid-template-columns:minmax(0,1fr) 2fr;gap:3rem;padding:3rem 2.4rem;background:var(--bruma);margin-top:1rem}
 .quien p{max-width:40rem;font-size:1.05rem}
-.quien p.etiqueta{font-size:.75rem}
+.quien p.etiqueta{font-size:.72rem}
 .quien a{color:var(--acento);text-underline-offset:3px}
 .quien a:hover{color:var(--texto)}
 .portada h1{font-size:clamp(3rem,8vw,6rem)}
 .portada figure{margin:0;justify-self:end;max-width:460px;width:100%}
 .portada figure img{display:block;width:100%;height:auto;box-shadow:0 22px 48px -24px rgba(var(--sombra),.55)}
 .firma{margin:1.6rem 0 0;font-size:.95rem;color:var(--gris)}
-.boton{display:inline-block;margin-top:1.8rem;padding:.95rem 1.7rem;background:var(--texto);color:var(--leyenda);text-decoration:none;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;transition:.2s}
-.boton:hover{background:var(--boton-hover)}
+.boton{display:inline-block;margin-top:1.8rem;padding:.8rem 1.4rem;background:var(--azul);color:var(--texto);text-decoration:none;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;transition:.2s}
+.boton:hover{background:var(--boton-hover);color:var(--fondo)}
 /* portada: intro */
 .intro{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:end;padding:4.5rem 0 3rem}
 .intro .bio{font-size:1rem;color:var(--texto);border-left:2px solid var(--linea);padding-left:1.4rem}
@@ -55,12 +56,12 @@ p{margin:0 0 1rem}
 .serie h3{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:.6rem}
 .serie p{color:var(--gris);max-width:34rem}
 .serie p.etiqueta{color:var(--acento)}
-.serie .ir{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--texto);border-bottom:1px solid var(--texto);padding-bottom:2px}
+.serie .ir{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--texto);border-bottom:1px solid var(--texto);padding-bottom:2px}
 .nueva{margin-top:1.2rem;border:1px dashed var(--linea);padding:1.4rem 1.6rem;color:var(--gris);font-size:.95rem}
 /* oasis */
 .titulo-pagina{padding:3.5rem 0 2.2rem;max-width:52rem}
 .titulo-pagina h1{font-size:clamp(2.4rem,6vw,4.2rem);margin-bottom:1rem}
-.volver{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--gris);display:inline-block;margin-bottom:1.4rem}
+.volver{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--gris);display:inline-block;margin-bottom:1.4rem}
 .volver:hover{color:var(--texto)}
 .grilla{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .grilla.cuatro{grid-template-columns:repeat(4,1fr)}
@@ -69,7 +70,7 @@ p{margin:0 0 1rem}
 .ficha button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
 .ficha img{display:block;width:100%;height:auto}
 .ficha figcaption{padding:.9rem 1.1rem 1.1rem}
-.ficha figcaption strong{font-family:var(--f-titulo);font-size:1.15rem;font-weight:600;display:block;line-height:1.2}
+.ficha figcaption strong{font-family:var(--f-titulo);font-size:1.15rem;font-weight:var(--peso-titulo);display:block;line-height:1.2}
 .ficha figcaption span{font-size:.85rem;color:var(--gris)}
 .ubicacion{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:3rem;align-items:center;margin:0 0 1rem}
 .ubicacion .ficha{max-width:420px}
@@ -88,7 +89,7 @@ dialog button{font:inherit;font-size:.8rem;letter-spacing:.12em;text-transform:u
 footer{margin-top:5rem;border-top:1px solid var(--linea);padding:1.8rem 0 3rem;font-size:.85rem;color:var(--gris)}
 @media (max-width:820px){
  .portada{min-height:0;padding:3rem 0 2.4rem}
- .quien{grid-template-columns:1fr;gap:1.2rem}
+ .quien{grid-template-columns:1fr;gap:1.2rem;padding:2rem 1.4rem}
  .portada figure{justify-self:start;max-width:320px}
  .ubicacion{grid-template-columns:1fr;gap:1.4rem}
  .intro{grid-template-columns:1fr;gap:1.6rem;padding:2.6rem 0 2rem}
